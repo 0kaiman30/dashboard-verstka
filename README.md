@@ -1,30 +1,52 @@
-# React + TypeScript + Vite
+# Wallet App Task
+Задание на верстку: адаптивный layout финансового веб-приложения (дашборд, сайдбар-навигация, хедер с поиском и мобильным меню).
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Стек
+- **React 18** + **TypeScript**
+- **Vite** - сборка и dev-сервер
+- **React Router v6** - маршрутизация с вложенными (nested) роутами и persistent layout
+- **SCSS Modules** - стилизация, изоляция классов на уровне компонента
+- **Feature-Sliced Design (FSD)** - архитектурная методология для структуры проекта
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+## Структура проекта
+```
+src/
+├── app/                    # Инициализация приложения
+│   ├── providers/
+│   │   └── router/         # Конфигурация роутинга (routeConfig, AppRouter), общий layout: Header + Sidebar + <Outlet/>
+│   └── styles/              # Глобальные стили (reset, tokens, fonts)
+├── assets/icons/        # SVG-иконки как React-компоненты
+├── pages/                   # Страницы
+├── widgets/                 # Крупные самостоятельные UI-блоки
+│   ├── Header/
+│   ├── Sidebar/
+│   └── Dashboard/           
+└── shared/                  # Переиспользуемые ресурсы
+    ├── ui/                  # Общие UI-компоненты (StatCard, ...)
+    └── const/router.ts      # Единый источник путей (appRoutes) и nav-конфиг
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## Архитектурные решения
+- **Persistent layout через nested routes.** `AppLayout` (Header + Sidebar) не пересоздаётся при переходах между страницами — React Router рендерит только содержимое `<Outlet/>`. Header/Sidebar монтируются один раз за сессию.
+- **Единый источник путей.** Все маршруты живут в `shared/const/router.ts` (`appRoutes`) — оттуда их берут и роутер (`routeConfig`), и навигация (`Sidebar`, мобильное меню в `Header`), чтобы пути не расходились между конфигом роутера и UI-меню.
+- **Design-токены в CSS custom properties** (`app/styles/tokens.scss`) — цвета, радиусы, отступы вынесены в переменные, не захардкожены по компонентам.
+
+## Запуск проекта
+```bash
+npm install
+npm run dev       # dev-сервер
+npm run build     # прод-сборка
+npm run preview   # локальный просмотр прод-сборки
+```
+
+## Реализовано
+- [x] Адаптивный Header: логотип, поиск, блок пользователя, бургер-меню на мобильных ширинах
+- [x] Sidebar с активной подсветкой текущего роута (`NavLink`)
+- [x] Мобильное выезжающее меню с overlay и анимацией бургера
+- [x] Dashboard: карточки статистики (маппинг из конфига) + график расходов
+- [x] Обработка несуществующих маршрутов (404) внутри общего layout
+
+## Известные ограничения
+- Данные пользователя, карточек и графика на Dashboard - статичный мок, интеграция с реальным API/auth не входила в объём задания
+- Поиск в хедере - только верстка, без обработчика
+- Кнопка "JOIN NOW" (Premium-карточка в Sidebar) - без обработчика
