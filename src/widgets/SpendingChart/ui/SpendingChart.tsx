@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./SpendingChart.module.scss";
+import cls from "./SpendingChart.module.scss";
 
 export interface DataPoint {
   label?: string;
@@ -73,9 +73,9 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({
   const linePath = buildSmoothPath(points);
 
   return (
-    <div className={styles.chartContainer}>
+    <div className={cls.chartContainer}>
       <svg
-        className={styles.chart}
+        className={cls.chart}
         viewBox={`0 0 ${width} ${height}`}
         preserveAspectRatio="xMidYMid meet"
         role="img"
@@ -87,7 +87,7 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({
           y1={padding.top}
           x2={padding.left}
           y2={padding.top + innerH}
-          className={styles.axis}
+          className={cls.axis}
         />
 
         {/* Ось X (Горизонтальная снизу) */}
@@ -96,11 +96,11 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({
           y1={padding.top + innerH}
           x2={width - padding.right}
           y2={padding.top + innerH}
-          className={styles.axis}
+          className={cls.axis}
         />
 
         {/* Гладкая белая линия */}
-        <path d={linePath} className={styles.line} fill="none" />
+        <path d={linePath} className={cls.line} fill="none" />
 
         {/* Белые точки на местах переломов */}
         {points.map((p, i) => (
@@ -109,7 +109,7 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({
             cx={p.x}
             cy={p.y}
             r={2.5}
-            className={styles.dot}
+            className={cls.dot}
           />
         ))}
 
@@ -121,7 +121,7 @@ export const SpendingChart: React.FC<SpendingChartProps> = ({
               x={points[i].x}
               y={padding.top + innerH + 24}
               textAnchor="middle"
-              className={styles.label}
+              className={cls.label}
             >
               {d.label}
             </text>

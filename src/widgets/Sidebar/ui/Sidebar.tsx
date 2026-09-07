@@ -1,26 +1,17 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import cls from "./Sidebar.module.scss";
-import { appRoutes } from "../../../shared/const/router";
-
-const navItems = [
-  { path: appRoutes.DASHBOARD, title: "Dashboard" },
-  { path: appRoutes.MYWALLET, title: "My Wallet" },
-  { path: appRoutes.TRANSACTIONS, title: "Transactions" },
-  { path: appRoutes.SETTINGS, title: "Settings" },
-];
+import { navItems } from "../../../shared/const/router";
 
 export const Sidebar: React.FC = () => {
   return (
     <aside className={cls.sidebar}>
-      {/* Иконка пользователя (union.png из public) */}
       <div className={cls.avatarContainer}>
         <div className={cls.avatar}>
           <img src="/Union.png" alt="User avatar" className={cls.avatarImg} />
         </div>
       </div>
 
-      {/* Навигационное меню */}
       <nav className={cls.nav}>
         <ul className={cls.navList}>
           {navItems.map((item) => (
@@ -39,7 +30,6 @@ export const Sidebar: React.FC = () => {
         </ul>
       </nav>
 
-      {/* Карточка подписки Premium (lock.png из public) */}
       <div className={cls.premiumCard}>
         <h3 className={cls.premiumTitle}>
           Subscribe to

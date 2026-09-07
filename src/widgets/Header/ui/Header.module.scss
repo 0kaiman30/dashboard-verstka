@@ -1,12 +1,10 @@
 .header {
   background-color: var(--bg-sidebar);
-  border-bottom: 1px solid var(--border-subtle);
   height: var(--header-height);
   width: 100%;
   display: flex;
   align-items: center;
-  padding: 50px 47px;
-  border: none;
+  padding: 38px 47px;
 }
 
 .container {
@@ -84,21 +82,14 @@
   }
 }
 
-.userAvatar {
-  width: 32px;
-  height: 32px;
-  background-color: rgba(220, 252, 24, 0.15);
+.avatarImg {
+  width: 30px;
+  height: 30px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
-
-  svg {
-    width: 20px;
-    height: 20px;
-    fill: var(--gradient-color-one);
-  }
+  object-fit: cover;
 }
 
 .burger {
@@ -110,7 +101,7 @@
   background: transparent;
   border: none;
   cursor: pointer;
-  z-index: 101; // Выше меню и оверлея
+  z-index: 101;
 
   span {
     width: 100%;
@@ -133,7 +124,6 @@
   }
 }
 
-/* Оверлей и меню по умолчанию выключены */
 .overlay {
   display: none;
 }
@@ -142,7 +132,6 @@
   display: none;
 }
 
-/* Адаптивность для мобилок */
 @media (max-width: 768px) {
   .header {
     padding: 0 20px;
@@ -168,7 +157,6 @@
     max-width: 160px;
   }
 
-  /* Затемняющий задник */
   .overlay {
     display: block;
     position: fixed;
@@ -189,7 +177,6 @@
     pointer-events: auto;
   }
 
-  /* Выезжающая панель справа на весь экран */
   .mobileMenu {
     display: flex;
     flex-direction: column;
@@ -198,7 +185,7 @@
     right: 0;
     width: 280px;
     height: 100vh;
-    background-color: var(--bg-sidebar);
+    background-color: var(--primary-color);
     border-left: 1px solid var(--border-subtle);
     padding: 80px 28px 32px;
     z-index: 100;
@@ -209,19 +196,6 @@
 
   .mobileMenuOpen {
     transform: translateX(0);
-  }
-
-  .menuHeader {
-    margin-bottom: 24px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-subtle);
-  }
-
-  .menuTitle {
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    color: var(--text-muted);
   }
 
   .navList {

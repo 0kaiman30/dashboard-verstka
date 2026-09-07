@@ -1,16 +1,10 @@
 .page {
   background-color: var(--bg-card-muted);
-
   border-radius: var(--radius-lg);
-
   padding: 24px 32px 40px;
-
   margin: 0 25px 0 0;
-
   display: flex;
-
   flex-direction: column;
-
   gap: 32px;
 }
 
@@ -49,7 +43,6 @@
   flex-shrink: 0;
 }
 
-/* Перешли на CSS Grid для адаптивной сетки карточек */
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -65,23 +58,22 @@
   box-sizing: border-box;
 
   h2 {
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 25px;
+    font-weight: 300;
   }
 }
 
 .chartSubtitle {
-  font-size: 12px;
+  font-size: 15px;
+  font-weight: 200;
   color: var(--text-muted);
-  margin-bottom: 20px;
+  padding: 5px 0 30px 0;
 }
 
-/* Обертка для скролла SVG-графика на сверхмаленьких экранах */
 .chartWrapper {
   width: 100%;
   overflow-x: auto;
 
-  /* Кастомный скроллбар для аккуратности */
   &::-webkit-scrollbar {
     height: 4px;
   }
@@ -91,7 +83,6 @@
   }
 }
 
-/* Адаптивные брейкпоинты */
 @media (max-width: 1024px) {
   .page {
     padding: 24px;
@@ -102,9 +93,7 @@
 @media (max-width: 768px) {
   .page {
     padding: 16px 16px 32px;
-
     gap: 24px;
-
     margin: 20px;
   }
 
@@ -122,12 +111,12 @@
     padding: 8px;
 
     span {
-      display: none; // Скрываем текст, оставляем иконку
+      display: none;
     }
   }
 
   .cards {
-    grid-template-columns: 1fr; // Строго в одну колонку
+    grid-template-columns: 1fr;
     gap: 12px;
   }
 }

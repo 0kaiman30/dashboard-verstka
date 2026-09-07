@@ -1,11 +1,13 @@
 export const appRoutes = {
-  DASHBOARD: "",
-  MYWALLET: "mywallet",
-  TRANSACTIONS: "transactions",
-  SETTINGS: "settings",
-};
+  DASHBOARD: "/",
+  MYWALLET: "/mywallet",
+  TRANSACTIONS: "/transactions",
+  SETTINGS: "/settings",
+} as const;
 
-export const getRouteDashboard = () => "/";
-export const getRoutMyWallet = () => "/mywallet";
-export const getRouteTransactions = () => "/transactions";
-export const getRouteSettings = () => "/settings";
+export const navItems = [
+  { path: appRoutes.DASHBOARD, title: "Dashboard" },
+  { path: appRoutes.MYWALLET, title: "My Wallet" },
+  { path: appRoutes.TRANSACTIONS, title: "Transactions" },
+  { path: appRoutes.SETTINGS, title: "Settings" },
+];

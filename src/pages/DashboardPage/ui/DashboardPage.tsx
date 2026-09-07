@@ -1,6 +1,5 @@
-import { FC } from "react";
 import { Dashboard } from "../../../widgets/Dashboard";
 
-export const DashboardPage: FC = () => {
+export const DashboardPage = () => {
   return <Dashboard />;
 };
