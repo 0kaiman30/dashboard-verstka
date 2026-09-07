@@ -11,7 +11,8 @@ export const STAT_CARDS: StatCardConfig[] = [
 ];
 
 export const SPENDING_DATA = [
-  { label: "JAN", value: 20 },
+  { label: "", value: 1 },
+  { label: "JAN", value: 15 },
   { label: "FEB", value: 62 },
   { label: "MAR", value: 68 },
   { label: "APR", value: 74 },

@@ -14,6 +14,8 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
+  const MockUserName = "POORNASHREE THIRUMALAI"
+
   return (
     <header className={cls.header}>
       <div className={cls.container}>
@@ -28,7 +30,7 @@ export const Header = () => {
 
         <div className={cls.user}>
           <span className={cls.userText}>
-            Welcome back, <strong>POORNASHREE THIRUMALAI</strong>
+            Welcome back, <strong>{MockUserName}</strong>
           </span>
           <div className={cls.userAvatar}>
             <img src="/Union.png" alt="User avatar" className={cls.avatarImg} />
