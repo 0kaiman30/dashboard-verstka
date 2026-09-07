@@ -1,0 +1,133 @@
+.page {
+  background-color: var(--bg-card-muted);
+
+  border-radius: var(--radius-lg);
+
+  padding: 24px 32px 40px;
+
+  margin: 0 25px 0 0;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 32px;
+}
+
+.pageHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 22px;
+    font-weight: 700;
+  }
+}
+
+.filtersBtn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border-subtle);
+  background: transparent;
+  color: var(--secondary-color);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+}
+
+.filtersIcon {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Перешли на CSS Grid для адаптивной сетки карточек */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.chartSection {
+  background: var(--bg-card-muted);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+
+  h2 {
+    font-size: 16px;
+    font-weight: 700;
+  }
+}
+
+.chartSubtitle {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+/* Обертка для скролла SVG-графика на сверхмаленьких экранах */
+.chartWrapper {
+  width: 100%;
+  overflow-x: auto;
+
+  /* Кастомный скроллбар для аккуратности */
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: var(--border-subtle);
+    border-radius: 4px;
+  }
+}
+
+/* Адаптивные брейкпоинты */
+@media (max-width: 1024px) {
+  .page {
+    padding: 24px;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 16px 16px 32px;
+
+    gap: 24px;
+
+    margin: 20px;
+  }
+
+  .chartSection {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pageHead h1 {
+    font-size: 18px;
+  }
+
+  .filtersBtn {
+    padding: 8px;
+
+    span {
+      display: none; // Скрываем текст, оставляем иконку
+    }
+  }
+
+  .cards {
+    grid-template-columns: 1fr; // Строго в одну колонку
+    gap: 12px;
+  }
+}
