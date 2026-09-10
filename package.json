@@ -10,10 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.102.8",
+    "msw": "^2.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.18.3",
-    "sass": "^1.104.0"
+    "react-window": "^2.3.1",
+    "sass": "^1.104.0",
+    "zustand": "^5.0.15"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",
@@ -26,5 +30,10 @@
     "eslint-plugin-react-refresh": "^0.4.5",
     "typescript": "^5.2.2",
     "vite": "^5.1.0"
+  },
+  "msw": {
+    "workerDirectory": [
+      "public"
+    ]
   }
 }

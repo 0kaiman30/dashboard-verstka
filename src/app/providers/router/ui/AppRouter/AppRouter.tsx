@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { routeConfig } from "../../config/routeConfig.tsx";
-import { AppLayout } from "../index.ts";
-import { MissingPage } from "../../../../../pages/MissingPage";
+import AppLayout from "../AppLayout/ui/AppLayout.tsx";
+import { MissingPage } from "@/pages/MissingPage/MissingPage.tsx";
 
 const AppRouter = () => {
   return (

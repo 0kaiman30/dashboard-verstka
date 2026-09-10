@@ -1,1 +1,0 @@
-export { TrashWidget } from "./ui/TrashWidget";

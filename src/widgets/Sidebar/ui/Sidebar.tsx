@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import cls from "./Sidebar.module.scss";
-import { navItems } from "../../../shared/const/router";
+import { navItems } from "../../../shared/lib/const/router";
 
 export const Sidebar: React.FC = () => {
   return (

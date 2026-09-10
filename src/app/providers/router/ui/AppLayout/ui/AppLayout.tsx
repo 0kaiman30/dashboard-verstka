@@ -1,17 +1,17 @@
 import { Outlet } from "react-router-dom";
-import styles from "./AppLayout.module.scss";
-import { Sidebar } from "../../../../../../widgets/Sidebar";
-import { Header } from "../../../../../../widgets/Header";
+import cls from "./AppLayout.module.scss";
+import { Header } from "@/widgets/Header";
+import { Sidebar } from "@/widgets/Sidebar";
 
 const AppLayout = () => {
   return (
-    <div className={styles.appLayout}>
+    <div className={cls.appLayout}>
       <Header />
-      <div className={styles.body}>
+      <div className={cls.body}>
         <Sidebar />
-        <div className={styles.content}>
+        <div className={cls.content}>
           <Outlet />
-        </div>
+          </div>
       </div>
     </div>
   );

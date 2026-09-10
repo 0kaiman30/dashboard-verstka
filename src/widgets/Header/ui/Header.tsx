@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 import cls from "./Header.module.scss";
-import { navItems } from "../../../shared/const/router";
+import { navItems } from "../../../shared/lib/const/router";
 import { SearchIcon } from "../../../assets/icons";
 
 export const Header = () => {
@@ -14,13 +14,13 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const MockUserName = "POORNASHREE THIRUMALAI"
+  const MockUserName = "POORNASHREE THIRUMALAI";
 
   return (
     <header className={cls.header}>
       <div className={cls.container}>
         <div className={cls.leftContent}>
-          <h1 className={cls.logo}>Wallet</h1>
+          <p className={cls.logo}>Wallet</p>
 
           <div className={cls.search}>
             <SearchIcon className={cls.searchIcon} />
@@ -55,7 +55,6 @@ export const Header = () => {
         <nav
           className={`${cls.mobileMenu} ${isMenuOpen ? cls.mobileMenuOpen : ""}`}
         >
-
           <ul className={cls.navList}>
             {navItems.map((item) => (
               <li key={item.path}>

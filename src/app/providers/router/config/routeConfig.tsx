@@ -1,7 +1,8 @@
-import { RouteObject } from "react-router-dom"; // или RouteProps
-import { appRoutes} from "../../../../shared/const/router";
-import { DashboardPage } from "../../../../pages/DashboardPage";
-import { MissingPage } from "../../../../pages/MissingPage";
+import { DashboardPage } from "@/pages/DashboardPage/DashboardPage";
+import { MissingPage } from "@/pages/MissingPage/MissingPage";
+import { TransactionPage } from "@/pages/TransactionPage/TransactionPage";
+import { appRoutes } from "@/shared/lib/const/router";
+import { RouteObject } from "react-router-dom";
 
 export const routeConfig: Record<string, RouteObject> = {
   [appRoutes.DASHBOARD]: {
@@ -14,7 +15,7 @@ export const routeConfig: Record<string, RouteObject> = {
   },
   [appRoutes.TRANSACTIONS]: {
     path: appRoutes.TRANSACTIONS,
-    element: <MissingPage />,
+    element: <TransactionPage />,
   },
   [appRoutes.SETTINGS]: {
     path: appRoutes.SETTINGS,

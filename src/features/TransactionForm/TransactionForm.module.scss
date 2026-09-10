@@ -1,0 +1,118 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  z-index: 100;
+}
+
+.form {
+  background-color: var(--bg-app);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  width: 100%;
+  max-width: 360px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  h3 {
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--bg-card-muted);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    color: var(--secondary-color);
+    outline: none;
+    font-size: 13px;
+
+    &:focus {
+      border-color: var(--gradient-color-one);
+    }
+
+    option {
+      background-color: var(--bg-app);
+      color: var(--secondary-color);
+    }
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+.error {
+  color: #ff5555;
+  font-size: 12px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 4px;
+
+  button {
+    padding: 6px 12px;
+    border-radius: var(--radius-md);
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+
+    &[type="button"] {
+      background: transparent;
+      color: var(--text-muted);
+
+      &:hover {
+        color: var(--secondary-color);
+      }
+    }
+
+    &[type="submit"] {
+      background-color: var(--gradient-color-one);
+      color: var(--primary-color);
+      font-weight: 500;
+
+      &:hover:not(:disabled) {
+        opacity: 0.9;
+      }
+
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay {
+    padding: 0;
+    align-items: flex-end;
+  }
+
+  .form {
+    max-width: 100%;
+    border-radius: var(--radius-md) var(--radius-md) 0 0;
+    padding: 14px 14px 20px;
+    border-bottom: none;
+
+    input,
+    select {
+      font-size: 16px; /* Защита от авто-зума на iOS */
+    }
+  }
+}
