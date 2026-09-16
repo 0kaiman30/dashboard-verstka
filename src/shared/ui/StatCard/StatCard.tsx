@@ -1,4 +1,4 @@
-import { KebabIcon } from "@/assets/icons";
+import { KebabIcon } from "@/shared/ui/icons";
 import cls from "./StatCard.module.scss";
 
 interface StatCardProps {
@@ -7,15 +7,9 @@ interface StatCardProps {
   value: string;
 }
 
-export const StatCard = ({
-  title,
-  subtitle,
-  value,
-}: StatCardProps) => {
+export const StatCard = ({ title, subtitle, value }: StatCardProps) => {
   return (
-    <div
-      className={`${cls.card}`}
-    >
+    <div className={`${cls.card}`}>
       <div className={cls.head}>
         <div>
           <p className={cls.title}>{title}</p>

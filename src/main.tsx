@@ -1,13 +1,13 @@
 import ReactDOM from "react-dom/client";
-import App from "./app/App.tsx";
-import "./app/styles/globals.scss";
+import "./styles/globals.scss";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "./app/providers/queryClient/queryClient.ts";
+import { queryClient } from "./providers/queryClient";
+import App from "./App";  
 
 async function enableMocking() {
   if (import.meta.env.MODE !== "development") return;
-  const { worker } = await import("./app/mocks/browser");
+  const { worker } = await import("./mocks/browser");
   return worker.start({ onUnhandledRequest: "bypass" });
 }
 
