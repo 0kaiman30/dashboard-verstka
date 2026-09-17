@@ -15,7 +15,7 @@ export const Header = () => {
     setIsMenuOpen(false);
   };
 
-  const MockUserName = "POORNASHREE THIRUMALAI";
+  const MockUserName = "Сикс Севенович";
 
   return (
     <header className={cls.header}>
@@ -32,7 +32,7 @@ export const Header = () => {
         <div className={cls.user}>
           <UndoRedoControls />
           <span className={cls.userText}>
-            Welcome back, <strong>{MockUserName}</strong>
+            Вы вернулись, <strong>{MockUserName}</strong>
           </span>
           <div className={cls.userAvatar}>
             <img src="/Union.png" alt="User avatar" className={cls.avatarImg} />

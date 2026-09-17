@@ -32,7 +32,7 @@ export const Sidebar: React.FC = () => {
 
       <div className={cls.premiumCard}>
         <h3 className={cls.premiumTitle}>
-          Subscribe to
+          Оформите подписку на
           <br />
           <strong className={cls.premiumPremiumTitle}>Premium</strong>
         </h3>
@@ -41,7 +41,7 @@ export const Sidebar: React.FC = () => {
           <img src="/lock.png" alt="Lock icon" className={cls.lockImg} />
         </div>
 
-        <button className={cls.premiumBtn}>JOIN NOW</button>
+        <button className={cls.premiumBtn}>ЖМИ</button>
       </div>
     </aside>
   );

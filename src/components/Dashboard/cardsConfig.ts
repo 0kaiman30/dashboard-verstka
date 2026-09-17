@@ -5,9 +5,9 @@ export interface StatCardConfig {
 }
 
 export const STAT_CARDS: StatCardConfig[] = [
-  { title: "Income", subtitle: "45% more this week", value: "$1200" },
-  { title: "Expense", subtitle: "15% more this week", value: "$300" },
-  { title: "Stocks", subtitle: "no investment this week", value: "$0" },
+  { title: "Доход", subtitle: "На этой неделе на 45% больше", value: "$1200" },
+  { title: "Траты", subtitle: "На этой неделе на 15% больше", value: "$300" },
+  { title: "Стоки", subtitle: "На этой неделе нет инвестиций", value: "$0" },
 ];
 
 export const SPENDING_DATA = [

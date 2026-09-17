@@ -8,9 +8,9 @@ export const Dashboard = () => {
   return (
     <div className={cls.page}>
       <div className={cls.pageHead}>
-        <h1>Dashboard</h1>
+        <h1>Дашборд</h1>
         <button className={cls.filtersBtn}>
-          <span>Filters</span>
+          <span>Фильтры</span>
           <FilterIcon className={cls.filtersIcon} />
         </button>
       </div>
@@ -22,8 +22,8 @@ export const Dashboard = () => {
       </div>
 
       <section className={cls.chartSection}>
-        <h2>Spending Overview</h2>
-        <p className={cls.chartSubtitle}>Monthly review</p>
+        <h2>Траты</h2>
+        <p className={cls.chartSubtitle}>Обзор трат за месяц</p>
         <div className={cls.chartWrapper}>
           <SpendingChart data={SPENDING_DATA} />
         </div>

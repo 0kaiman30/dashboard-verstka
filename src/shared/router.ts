@@ -6,8 +6,8 @@ export const appRoutes = {
 } as const;
 
 export const navItems = [
-  { path: appRoutes.DASHBOARD, title: "Dashboard" },
-  { path: appRoutes.MYWALLET, title: "My Wallet" },
-  { path: appRoutes.TRANSACTIONS, title: "Transactions" },
-  { path: appRoutes.SETTINGS, title: "Settings" },
+  { path: appRoutes.DASHBOARD, title: "Дашборд" },
+  { path: appRoutes.MYWALLET, title: "Кошелек" },
+  { path: appRoutes.TRANSACTIONS, title: "Транзакции" },
+  { path: appRoutes.SETTINGS, title: "Настройки" },
 ];
